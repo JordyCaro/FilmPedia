@@ -1,0 +1,15 @@
+  #hero {
+    background-image: url(https://cloudfront-us-east-1.images.arcpublishing.com/culturacolectiva/TFZTCNVPO5B7NNQAQF4N2SPDRA.jpg);
+    height: 350px;
+    background-size: cover;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .home {
+    background-color: var(--primario);
+    font-size: 1.6rem;
+    line-height: 1.5;
+  }
