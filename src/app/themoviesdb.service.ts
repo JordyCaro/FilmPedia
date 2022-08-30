@@ -28,15 +28,6 @@ export class ThemoviesdbService {
     return { params };
   }
 
-  // formatMovies(items: any[]) {
-  //   return items.map(item => {
-  //     if (item) {
-  //       item.overview = item.overview.substr(0, 100) + '...';
-  //       return item;
-  //     }
-  //   });
-  // }
-
   getDiscover(type: any, options: any): Observable<Response> {
     // options.api_key = this.API_KEY;
     const discoverUrl = `${this.API_BASE}discover/${type}`;
