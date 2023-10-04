@@ -1,38 +1,36 @@
-<div class="movie-title">
-    <img src="{{movie.backdrop_path}}" width="500">
-    <h1>{{movie.title}}</h1>
-</div>
-
-
-<div class="casting">
-    <div class="ver-pelicula">
-
-        <h2>Overview</h2>
-
-        <!-- <main class="contenedor"> -->
-
-        <div class="sinopsis">
-            <img class="peli-imagen" src="{{movie.poster_path}}" alt="Poster">
-
-            <div class="movie-content">
-                <p>{{movie.overview}}</p>
-            </div>
-
-        </div>
-
-
-        <div class="movie-info"><p>Genres:&nbsp;&nbsp; {{genres}} &nbsp;&nbsp; Languages:  &nbsp;&nbsp;{{languages}} &nbsp;&nbsp; User Score: &nbsp;&nbsp; {{movie.vote_average}}<br> <br>
-        Budget:&nbsp;&nbsp;{{movie.budget}}&nbsp;&nbsp;Companies:&nbsp;&nbsp;{{companies}}</p></div>
-
-
-        <div class="grid-cast slider">
-
-            <div class="pelicula" *ngFor="let actor of movie.cast">
-                <img class="cast-image" src="{{actor.imgUrl}}">
-                <p class="act-info">{{actor.character}}</p>
-                <p class="act-info">{{actor.name}}</p>
-            </div>
-
-        </div>
+<div class="movie-details">
+  <div class="movie-title">
+    <div class="logo">
+      <a href="/">FilmPedia</a>
     </div>
+    <img src="{{movie.backdrop_path}}" alt="{{movie.title}}">
+    <h1>{{movie.title}}</h1>
+  </div>
+
+  <div class="ver-pelicula">
+    <h2>Overview</h2>
+
+    <div class="sinopsis">
+      <img class="peli-imagen" src="{{movie.poster_path}}" alt="Poster">
+      <div class="movie-content">
+        <p>{{movie.overview}}</p>
+      </div>
+    </div>
+
+    <div class="movie-info">
+      <p><span class="highlight">Genres:</span> {{genres}}</p>
+      <p><span class="highlight">Languages:</span> {{languages}}</p>
+      <p><span class="highlight">User Score:</span> {{movie.vote_average}}</p>
+      <p><span class="highlight">Budget:</span> {{movie.budget}}</p>
+      <p><span class="highlight">Companies:</span> {{companies}}</p>
+    </div>
+
+    <div class="grid-cast slider">
+      <div class="pelicula" *ngFor="let actor of movie.cast">
+        <img class="cast-image" src="{{actor.imgUrl}}" alt="{{actor.name}}">
+        <p class="act-info">{{actor.character}}</p>
+        <p class="act-info">{{actor.name}}</p>
+      </div>
+    </div>
+  </div>
 </div>

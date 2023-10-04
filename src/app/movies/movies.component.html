@@ -1,33 +1,32 @@
-<div class="home">
-    <!-- <p>movies works!</p>
-    <ng-container *ngFor="let item of itemList">
-        <div>
-            <a (click)="goToMovieDetails(item)">{{item.title}}</a>
-        </div>
-    </ng-container> -->
+<div class="movie-app">
+  <header class="hero">
+    <video autoplay loop muted class="video-background">
+      <source src="../../assets/header.mp4" type="video/mp4">
+      Tu navegador no admite el elemento de video.
+    </video>
+    <h1 class="hero-title">FilmPedia</h1>
+  </header>
 
-    <div id="hero">
-        <h1>BIENVENIDO A LA PRUEBA DE <br> PELICULAS</h1>
-    </div>
-
-    <main class="contenedor">
-
-        <div class="grid">
-            <div class="pelicula" *ngFor="let movie of movieList">
-                <a href="/movie-details/{{movie.id}}">
-                    <img class="pelicula__imagen"  src="{{movie.poster_path}}" alt="Poster">
-                    <div class="pelicula__informacion">
-                        <p class="pelicula__info">{{movie.title}}:</p>
-                        <p class="pelicula__info">{{movie.release_date}}:</p>
-                    </div>
-                </a>
+  <div class="container">
+    <section class="movie-grid">
+      <div class="movie-card" *ngFor="let movie of movieList" (mouseenter)="showOverlay($event)" (mouseleave)="hideOverlay($event)">
+        <a href="/movie-details/{{movie.id}}">
+          <img class="pelicula__imagen" src="{{movie.poster_path}}" alt="Poster">
+          <div class="pelicula__overlay">
+            <div class="pelicula__overlay-content">
+              <p class="pelicula__overlay-title">{{movie.title}}</p>
+              <p class="pelicula__overlay-excerpt">{{movie.overview}}</p>
             </div>
-        </div>
+          </div>
+        </a>
+      </div>
+    </section>
 
-        <button class="card card-small" (click)="loadMore()" tabindex="0">
-            <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-            <span>Load More</span>
-        </button>
-    </main>
-      
+    <button class="load-more-button" (click)="loadMore()" tabindex="0">
+      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+      </svg>
+      <span>Load More</span>
+    </button>
+  </div>
 </div>

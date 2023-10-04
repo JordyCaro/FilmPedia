@@ -15,11 +15,11 @@ export class MovieDetailsComponent implements OnInit {
   genres: string = "";
   languages: string = "";
   companies: string = "";
-  
+
   constructor(
     private theMovieDBService: ThemoviesdbService,
     private router: Router,
-    private route: ActivatedRoute,) { 
+    private route: ActivatedRoute,) {
       this.route.params.subscribe(params => {
         this.movieId = params['id'];
         this.getMovieDetails(this.movieId);
@@ -45,7 +45,7 @@ export class MovieDetailsComponent implements OnInit {
     this.theMovieDBService.getCastMovie(this.movieId).subscribe((res: any) => {
       this.movie.cast = res['cast'].slice(0, 10).map((cast: any) => {
         cast.imgUrl = `${environment.imgUrl}${cast.profile_path}`;
-        
+
         return cast;
       });
       console.log(this.movie)
@@ -75,5 +75,7 @@ export class MovieDetailsComponent implements OnInit {
     })
     console.log("companies",this.companies)
   }
+
+
 
 }
